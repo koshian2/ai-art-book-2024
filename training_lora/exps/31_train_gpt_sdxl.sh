@@ -1,0 +1,16 @@
+accelerate launch --num_cpu_threads_per_process 1 sdxl_train_network.py \
+    --pretrained_model_name_or_path="cagliostrolab/animagine-xl-3.1" \
+    --dataset_config="/workdir/exps/31_train_gpt_sdxl.toml" \
+    --output_dir="/workdir/outputs/31_train_gpt_sdxl"  \
+    --output_name="sdxl_animagine31_gpt_lora" \
+    --save_model_as=safetensors \
+    --prior_loss_weight=1.0 \
+    --max_train_epochs=8 \
+    --learning_rate=1e-4 \
+    --optimizer_type="AdamW8bit" \
+    --xformers \
+    --cache_latents \
+    --mixed_precision="bf16" \
+    --full_bf16 \
+    --save_every_n_epochs=2 \
+    --network_module=networks.lora

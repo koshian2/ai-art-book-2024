@@ -1,0 +1,16 @@
+services:
+  kohya_ss:
+    build: .
+    image: kohya_ss
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/workdir
+      - ./default_config.yaml:/root/.cache/huggingface/accelerate/default_config.yaml
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0'] # 使用するGPUのID指定、1
+              capabilities: [gpu]

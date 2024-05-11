@@ -1,0 +1,3 @@
+# データとoutputsは除外
+data/
+outputs/
