@@ -1,0 +1,16 @@
+accelerate launch --num_cpu_threads_per_process 1 train_network.py \
+    --pretrained_model_name_or_path="JosephusCheung/ACertainThing" \
+    --dataset_config="/workdir/exps/30_train_gpt_sd1x.toml" \
+    --output_dir="/workdir/outputs/30_train_gpt_sd1x"  \
+    --output_name="sd1x_acthing_gpt_lora" \
+    --save_model_as=safetensors \
+    --prior_loss_weight=1.0 \
+    --max_train_epochs=8 \
+    --learning_rate=2e-4 \
+    --optimizer_type="AdamW8bit" \
+    --xformers \
+    --mixed_precision="fp16" \
+    --cache_latents \
+    --gradient_checkpointing \
+    --save_every_n_epochs=2 \
+    --network_module=networks.lora

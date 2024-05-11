@@ -1,0 +1,11 @@
+[general]
+enable_bucket = true                        # Aspect Ratio Bucketingを使うか否か
+
+[[datasets]]
+resolution = [512, 768]                     # 学習解像度 [横×縦]
+batch_size = 8                              # バッチサイズ。デフォルト4、SD1xでは8でVRAM8GB程度
+
+  [[datasets.subsets]]
+  image_dir = '/workdir/data/zunko03'       # 学習用画像を入れたフォルダを指定。コンテナ内のパスで指定
+  caption_extension = '.txt'                # キャプションファイルの拡張子　.txt を使う場合には書き換える
+  num_repeats = 10                          # 学習用画像の繰り返し回数
