@@ -1,0 +1,23 @@
+services:
+  sandbox_jupyter_lab:
+    build: .
+    image: sandbox_jupyter_lab
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./data:/home
+      - ./notebooks:/notebooks
+    environment:
+      - CUDA_VISIBLE_DEVICES=1
+    ports:
+      - "28888:8888"
+      - "27860:7860"
+      - "27861:7861"
+      - "27862:7862"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['1']
+              capabilities: [gpu]
