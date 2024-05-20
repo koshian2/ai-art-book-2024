@@ -10,6 +10,7 @@ RUN apt-get install -yq --no-install-recommends python3-pip \
         wget \
         git  \
         libopencv-dev \
+        unzip \
         tzdata && apt-get upgrade -y && apt-get clean
 
 RUN ln -s /usr/bin/python3 /usr/bin/python

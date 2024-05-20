@@ -13,3 +13,5 @@ jupyterlab-widgets==3.0.10
 omegaconf==2.3.0
 controlnet-aux==0.0.8
 accelerate==0.30.1
+scikit-learn==1.4.2
+matplotlib==3.9.0

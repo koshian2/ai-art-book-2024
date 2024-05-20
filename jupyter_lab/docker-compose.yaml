@@ -14,6 +14,7 @@ services:
       - "27860:7860"
       - "27861:7861"
       - "27862:7862"
+    shm_size: '8gb'
     deploy:
       resources:
         reservations:
