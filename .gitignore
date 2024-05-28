@@ -1,3 +1,6 @@
 # データとoutputsは除外
 data/
 outputs/
+
+# nerf_studioのクローンされた中身は除外
+nerf_studio/nerfstudio
